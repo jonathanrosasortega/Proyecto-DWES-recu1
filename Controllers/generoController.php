@@ -1,7 +1,7 @@
 <?php
-	require_once "Models/Serie.php" ;
-	require_once "Models/Genero.php" ;
-	require_once "Models/Pertenece.php" ;
+	require_once "Models/Serie.php";
+	require_once "Models/Genero.php";
+	require_once "Models/Pertenece.php";
 	class GeneroController{
 		public function __construct() { }
 
@@ -27,7 +27,7 @@
 
 				$generos = Genero::getGenerosDeSerie($_GET["ids"], 0);
 				$listaGeneros = Genero::getGenerosDeSerie($_GET["ids"], 1);
-				$ids = $_GET["ids"];
+				$serie = Serie::getSeriebyIds($_GET["ids"]);
 				// Redirigimos
 				require_once "views/gestionaGeneros.php";
 			} else { //Para crear un nuevo género
@@ -37,7 +37,7 @@
 				
 				$generos = Genero::getGenerosDeSerie($_GET["ids"], 0);
 				$listaGeneros = Genero::getGenerosDeSerie($_GET["ids"], 1);
-				$ids = $_GET["ids"];
+				$serie = Serie::getSeriebyIds($_GET["ids"]);
 				// Redirigimos
 				require_once "views/gestionaGeneros.php";
 			}

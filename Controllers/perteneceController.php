@@ -1,6 +1,7 @@
 <?php
-	require_once "Models/Pertenece.php" ;
-	require_once "Models/Genero.php" ;
+	require_once "Models/Serie.php";
+	require_once "Models/Pertenece.php";
+	require_once "Models/Genero.php";
 	class PerteneceController{
 		public function __construct() { }
 
@@ -22,6 +23,7 @@
 				$generos = Genero::getGenerosDeSerie($_GET["ids"], 0);
 				// Obtenemos la lista de géneros que no tiene la serie (Para el desplegable)
 				$listaGeneros = Genero::getGenerosDeSerie($_GET["ids"], 1);
+				$serie = Serie::getSeriebyIds($_GET["ids"]);
 				// Redirigimos
 				require_once "views/gestionaGeneros.php";
 			}

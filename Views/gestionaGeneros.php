@@ -46,7 +46,7 @@
 				?>
 				<tr>
 					<td><?= $genero->getGenero() ?></td>
-					<td><a href="index.php?ope=borrar&con=pertenece&ids=<?= $ids ?>&idg=<?= $genero->getIdg() ?>">Borrar</td>
+					<td><a href="index.php?ope=borrar&con=pertenece&ids=<?= $serie->getIds() ?>&idg=<?= $genero->getIdg() ?>">Borrar</td>
 				</tr>
 				<?php
 					}
@@ -64,14 +64,14 @@
 									}
 								?>
 								<option value="-1">- Nuevo género</option>
-								<input type="submit" value="Añadir">
+	  					</select>
+	  					<input type="submit" value="Añadir">
 								<br>
 								<input type="hidden" name="con" value="genero" />
 								<input type="hidden" name="ope" value="crear" />
-								<input type="hidden" name="ids" value="<?= $ids ?>" /><br>
+								<input type="hidden" name="ids" value="<?= $serie->getIds() ?>" /><br>
 								<label style="display: none" class="nuevoGenero" for="nuevoGenero">Nombre nuevo género:</label><br>
 								<input style="display: none" class="nuevoGenero" type="text" name="nuevoGenero" value="">
-	  					</select>
   					</form>
 					</td>
 					<td></td>
